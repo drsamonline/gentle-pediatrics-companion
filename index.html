@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#425848">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>Gentle Pediatrics — Home Companion</title>
+<style>
+  :root{
+    --paper:#faf8f5; --ink:#2b2a27; --sage:#55755e; --clay:#c46849;
+    --forest:#425848; --red:#b84a39; --redink:#782619; --warnbg:#faede8;
+    --gold:#d4a337; --goldbg:#faf5e6; --line:#ded8cf; --sub:#6e675d; --green:#f1f6f2;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Noto Serif",Georgia,"Times New Roman",serif;
+       font-size:16px;line-height:1.5;padding-bottom:70px;max-width:640px;margin:0 auto}
+  header{position:sticky;top:0;z-index:20;background:var(--forest);color:#fff;padding:10px 14px;
+         display:flex;align-items:center;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+  header .t{font-size:15px;font-weight:600}
+  header .s{font-size:10.5px;opacity:.85;letter-spacing:.08em;text-transform:uppercase}
+  header .leaf{width:24px;height:24px;flex:0 0 24px}
+  header .spacer{flex:1}
+  header button{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;
+                border-radius:999px;font:inherit;font-size:12.5px;padding:6px 12px;cursor:pointer}
+  main{padding:14px 14px 6px}
+  h1{font-size:21px;color:var(--forest);margin:2px 0 6px}
+  h2{font-size:17px;color:var(--forest);margin:18px 0 8px}
+  h3{font-size:15px;color:var(--clay);margin:14px 0 6px}
+  p{margin:0 0 10px}
+  .lead{font-style:italic;color:var(--sub)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 12px;cursor:pointer;
+        display:flex;flex-direction:column;gap:6px;min-height:104px}
+  .tile:active{transform:scale(.98)}
+  .tile .ic{color:var(--clay)}
+  .tile .nm{font-size:15px;font-weight:600;color:var(--ink);line-height:1.25}
+  .tile .sb{font-size:12px;color:var(--sub);line-height:1.3}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+  .card.gold{background:var(--goldbg);border-color:#ede2c2;border-left:5px solid var(--gold)}
+  .card.sage{background:var(--green);border-left:5px solid var(--forest)}
+  .strip{background:var(--warnbg);border:1px solid #ebd0c7;border-left:5px solid var(--red);color:var(--redink);
+         border-radius:10px;padding:12px 14px;margin:0 0 14px}
+  .strip h4{margin:0 0 6px;font-size:14px;color:var(--red);letter-spacing:.02em}
+  .strip ul{margin:4px 0 10px;padding-left:18px}
+  .strip li{margin:3px 0;font-size:14.5px}
+  .btn{display:block;width:100%;text-align:left;border-radius:10px;padding:13px 15px;margin:8px 0;font:inherit;
+       font-size:15.5px;cursor:pointer;background:#fff;border:1px solid var(--line);color:var(--ink)}
+  .btn:active{transform:scale(.99)}
+  .btn .sub{display:block;font-size:13px;color:var(--sub);margin-top:3px}
+  .btn .nm{font-weight:600}
+  .btn.primary{background:var(--sage);color:#fff;border-color:var(--sage);text-align:center;font-weight:600}
+  .btn.danger{background:var(--red);color:#fff;border-color:var(--red);text-align:center;font-weight:600;margin-top:0}
+  .btn.ghost{background:transparent;border-color:transparent;color:var(--sage);text-align:center;text-decoration:underline}
+  .btn.on{background:var(--green);border-color:var(--sage)}
+  .rx{border-top:4px solid var(--sage)}
+  .rx h3{margin-top:0;color:var(--forest);font-size:17px}
+  .pill{display:inline-block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--green);
+        color:var(--forest);border-radius:999px;padding:3px 10px;margin-bottom:8px}
+  .kv{font-size:14.5px}
+  .kv b{color:var(--forest)}
+  .foot{position:fixed;bottom:0;left:0;right:0;max-width:640px;margin:0 auto;background:rgba(250,248,245,.97);
+        backdrop-filter:blur(6px);border-top:1px solid var(--line);padding:7px 14px;font-size:10.5px;color:var(--sub);text-align:center}
+  .foot b{color:var(--red)}
+  ul{margin:6px 0 10px;padding-left:20px} li{margin:4px 0}
+  .muted{color:var(--sub);font-size:13px}
+  .back{margin:14px 0 4px}
+  .rxrow{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
+  .rxrow:last-child{border-bottom:none}
+  .rxrow .n{font-weight:600;color:var(--forest);min-width:0}
+  .rxrow .d{font-size:13.5px;color:var(--sub);margin-top:2px}
+</style>
+</head>
+<body>
+<header>
+  <svg class="leaf" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 36 C20 22 20 12 20 4" fill="none" stroke="#d4a337" stroke-width="2.4" stroke-linecap="round"/><path d="M20 26 Q8 20 6 10 Q18 14 20 26 Z" fill="#8fae97"/><path d="M20 18 Q32 12 34 4 Q22 8 20 18 Z" fill="#8fae97"/></svg>
+  <div><div class="t">Gentle Pediatrics</div><div class="s">Home Companion</div></div>
+  <div class="spacer"></div>
+  <button id="navFlags">Red flags</button>
+  <button id="navRx">Remedies</button>
+</header>
+
+<main id="view"></main>
+
+<div class="foot"><b>Not a diagnosis.</b> Homeopathy never replaces emergency care, oxygen, IV fluids, antibiotics or surgery. Confirm every remedy with a licensed clinician.</div>
+
+<script>
+/* --------------------------------------------------------------- remedies */
+const R = {
+ aconite:{n:"Aconitum napellus 30C", short:"Sudden, terrified, dry heat", k:"Sudden onset after cold wind; terror and panic; dry burning heat; thirst for cold water; restless; worse after midnight; better fresh air.", w:"Better: fresh air, warm drinks, being calm and covered. Worse: after midnight, cold draughts, fright."},
+ bella:{n:"Belladonna 30C", short:"Blazing scarlet face, dilated pupils", k:"Sudden blazing heat; scarlet face; dilated pupils; throbbing carotids; hands and feet may be cold while the head burns; worse from jarring, light and 3 p.m. or midnight; better resting in a dark, quiet room.", w:"Better: dark quiet room, resting upright, slight warmth. Worse: jarring the bed, light, cold air on the head."},
+ cham:{n:"Chamomilla 30C", short:"Furious, one red cheek, wants carrying", k:"Furious and impatient; one cheek red and the other pale; quiet only when carried fast; hot green stools; hot sweat on the head; worse at night and while teething.", w:"Better: being carried and rocked, warm drinks. Worse: evening and night, being touched when angry."},
+ puls:{n:"Pulsatilla pratensis 30C", short:"Weeping, clinging, wants cool air", k:"Mild, weeping, clinging; thirstless despite fever; wants cool fresh air and gentle rocking; worse in warm stuffy rooms and in the evening; bland yellowish-green discharges.", w:"Better: cool open air, gentle rocking, comfort. Worse: warm rooms, evening, rich food."},
+ spong:{n:"Spongia tosta 30C", short:"Dry, hollow, barking cough", k:"Dry, hollow, barking cough like a saw; hoarse; the larynx feels dry and bruised; wakes before midnight in a panic; worse cold air and lying flat; better warm drinks, sitting up and moist air.", w:"Better: warm drinks, steam, sitting up. Worse: before midnight, cold air, lying down."},
+ hepar:{n:"Hepar sulphuris 30C", short:"Loose, rattling, very chilly", k:"Extremely sensitive to cold and drafts; loose rattling cough; irritable and oversensitive; worse the least uncovering, cold air and drafts; better warmth and being well wrapped up.", w:"Better: warmth, being wrapped, warm food. Worse: cold drafts, sticking a hand out of bed."},
+ bry:{n:"Bryonia alba 30C", short:"Dry and painful, holds the chest still", k:"Dry painful cough with a stitching pain; the child holds the chest still; worse the slightest movement, and much better lying completely still; very thirsty for cold water.", w:"Better: lying still, pressure on the chest. Worse: any movement, warmth, eating."},
+ coloc:{n:"Colocynthis 30C", short:"Cramping, doubles up, better hard pressure", k:"Agonising cramping belly pain that comes in waves; the child doubles up and presses hard objects into the belly; often after anger or indignation; worse from eating, anger and gentle touch.", w:"Better: hard deep pressure, bending double, warmth. Worse: anger, eating, gentle touch."},
+ magphos:{n:"Magnesia phosphorica 30C", short:"Cramping, better warmth and rubbing", k:"Cramping abdominal or muscular pains that come and go; relieved by warmth, warm towels and gentle rubbing; worse from cold and cold drinks.", w:"Better: warmth, warm towels, gentle rubbing, bending double. Worse: cold, cold drinks."},
+ cina:{n:"Cina maritima 30C", short:"Pale mouth circle, bores the nose", k:"Pale bluish-white circle round the mouth; bores into the nose until it bleeds; grinds the teeth at night; peevish and cannot bear to be touched or even looked at; ravenous or refuses food.", w:"Better: lying on the abdomen, being left alone. Worse: being touched or looked at, night."},
+ stram:{n:"Stramonium 30C", short:"Wakes screaming in the dark, clings", k:"Wakes in the dark screaming in terror; clings and cannot bear to be left alone; fearful of shadows and the dark; may chatter or sing.", w:"Better: light, company, being held. Worse: darkness, being alone, night."},
+ coffea:{n:"Coffea cruda 30C", short:"Wide awake, over-excited, cannot settle", k:"Wide awake and over-excited; the mind races and will not let the child settle; oversensitive to noise and pain; better from warmth and quiet.", w:"Better: warmth, quiet, a warm bath. Worse: noise, excitement, cold."},
+ ars:{n:"Arsenicum album 30C", short:"Burning discharges, anxious, after midnight", k:"Burning stools or vomit; restless anxiety and fear of being alone; worse after midnight; thirsty for small frequent sips; chilly; great weakness; better warmth and company.", w:"Better: warmth, warm drinks, company. Worse: after midnight, cold food or drink, cold air."},
+ podo:{n:"Podophyllum peltatum 30C", short:"Painless gushing stools, early morning", k:"Profuse, painless, gushing watery stools, worst in the early morning and after the least food or drink; a bearing-down, prolapse-like sensation; better lying on the abdomen.", w:"Better: lying on the abdomen, firm pressure, cool air. Worse: early morning, eating, hot weather."},
+ graph:{n:"Graphites 30C", short:"Sticky honey-coloured oozing eczema", k:"Dry or crusty eczema in the skin folds with cracks that ooze a thick, sticky, honey-like fluid; rough unhealthy skin; a chilly, stout child; sad and slow to act.", w:"Better: open air, cool applications. Worse: warmth of the bed, washing, night."},
+ apis:{n:"Apis mellifica 30C", short:"Raised pale wheals, burning and stinging", k:"Raised pale wheals that burn and sting; puffy swelling of the lips, eyelids or face; the skin is hot and tender; better cold, worse heat and pressure.", w:"Better: cold applications, cool air. Worse: heat, pressure, afternoon."},
+ antTart:{n:"Antimonium tartaricum 30C", short:"Loose rattling mucus, drowsy, sits up", k:"Loose rattling chest with much mucus the child cannot cough up; drowsy, pale and weak; must sit up; worse lying down and in the warmth of the room.", w:"Better: sitting up, expectorating, cool air. Worse: lying down, warmth, 3 to 4 a.m."},
+ arnica:{n:"Arnica montana 30C", short:"Bruises and shock after a fall", k:"Bruises, bumps and muscle soreness after a fall or blow; a sore, beaten, bruised feeling; the child insists \u201cI am fine\u201d while clearly not being fine; worse touch and jarring.", w:"Better: lying still, lying with the head low. Worse: touch, jarring, exertion."},
+ ruta:{n:"Ruta graveolens 30C", short:"Bruised, lame bone after a blow", k:"Injury to bone, periosteum or joint; a bruised, lame, stiff feeling that lingers after a blow to a shin or a sprain; worse cold and lying on the injured part.", w:"Better: warmth, movement, lying on the back. Worse: cold, damp, lying on the part."},
+ canth:{n:"Cantharis 30C", short:"Burns and scalds, burning blisters", k:"Burns and scalds with burning, smarting pain and blisters; the pain is intense; better cold applications and fresh air; worse touch, warmth and evening.", w:"Better: cold applications, fresh air. Worse: touch, warmth, evening."}
+};
+
+/* --------------------------------------------------------------- conditions */
+const CONDITIONS = [
+ {id:"fever", name:"Fever", sub:"A hot child", icon:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3a2 2 0 0 1 2 2v8a4 4 0 1 1-4 0V5a2 2 0 0 1 2-2z"/><line x1="12" y1="9" x2="12" y2="15"/></svg>',
+  flags:["A rash that stays dark under a clear glass","Very drowsy, floppy, or a fit (seizure)","A baby under 12 weeks with any fever"],
+  opts:[["Sudden, terrified, dry heat after cold wind","aconite"],["Blazing scarlet face, dilated pupils, worse from jarring","bella"]],
+  watch:["The child becomes drowsy, floppy or hard to wake","A rash appears that does not fade under a glass","Breathing becomes difficult, or the neck stiffens","A fever in a baby under 12 weeks"]},
+
+ {id:"cough", name:"Cough", sub:"Barking, rattling or dry", icon:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8c3-3 8-3 11 0"/><path d="M4 13c3-3 8-3 11 0"/><path d="M4 18c3-3 8-3 11 0"/></svg>',
+  flags:["A harsh noise breathing IN (stridor) at rest","Drooling, or struggling to breathe","Blue or grey lips"],
+  opts:[["Dry, hollow, barking; worse at midnight","spong"],["Loose, rattling, chilly; worse from cold air","hepar"],["Dry and painful; holds the chest still","bry"]],
+  watch:["Noisy breathing in (stridor) at rest","Drooling or unable to swallow","Drowsiness with a rattling chest","Blue lips, or ribs sucking in"]},
+
+ {id:"ear", name:"Earache", sub:"Pulling at the ear", icon:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 4a5 5 0 0 1 5 5c0 2-1.6 3-2.6 4S9 15 9 17a3 3 0 0 1-3 3"/><path d="M9.5 8.5a2 2 0 0 1 2 2"/></svg>',
+  flags:["Red, swollen or tender bone behind the ear","The child is very drowsy or unwell","Pus or blood from the ear with a very unwell child"],
+  opts:[["Weeping, clinging, wants cool air, thirstless","puls"],["Furious, screaming, one red cheek, wants carrying","cham"]],
+  watch:["Swelling, redness or tenderness behind the ear","Discharge of pus or blood from the ear","A very unwell or drowsy child"]},
+
+ {id:"tummy", name:"Belly pain", sub:"Colic, cramping, wind", icon:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13" r="7"/><path d="M9.5 6.5c.3-1 1.4-1.7 2.8-1.5"/></svg>',
+  flags:["A hard, board-like belly, or green (bile) vomit","Blood in the stool","Sudden agony with the legs drawn up and a pale, mottled look"],
+  opts:[["Better from hard pressure, doubling up; after anger","coloc"],["Better from warmth and gentle rubbing","magphos"],["Pale mouth circle, bores the nose, grinds teeth","cina"]],
+  watch:["A rigid or swollen belly, or green vomit","Blood in the stool","Sudden agony with the legs drawn up","The child is pale, mottled and very unwell"]},
+
+ {id:"teeth", name:"Teething &amp; sleep", sub:"Restless nights, sore gums", icon:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7.5 4h9c1 0 1 2 0 4l-1 3c-.6 3-1.1 9-2.5 9S12 15 12 12c0 3-.6 8-2 8S9.5 14 9 11L8 8C7 6 6.5 4 7.5 4z"/></svg>',
+  flags:["A baby under 12 weeks with any fever","No wet nappy for 8 hours","A rash that stays dark under a clear glass"],
+  opts:[["Furious, one red cheek, wants carrying","cham"],["Wakes screaming in the dark, clings, fearful","stram"],["Wide awake and over-excited, cannot settle","coffea"]],
+  watch:["A baby under 12 weeks with any fever","Refusing fluids, or no urine for 8 hours","A rash that does not fade under a glass"]},
+
+ {id:"diarrhoea", name:"Diarrhoea", sub:"Loose stools, vomiting", icon:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3c3 4 5 6.6 5 9.2A5 5 0 0 1 7 12.2C7 9.6 9 7 12 3z"/></svg>',
+  flags:["Drowsy or floppy","Sunken eyes, or no urine for 8 hours","Blood in the stool, or green (bile) vomit"],
+  opts:[["Burning stool, anxious, worse after midnight","ars"],["Green grassy stools, furious, teething","cham"],["Painless gushing stools, worst early morning","podo"]],
+  watch:["Any sign of dehydration (drowsy, sunken eyes, no urine, cold hands)","Blood in the stool","Green vomit or a rigid belly","A child who cannot be roused"]},
+
+ {id:"rash", name:"Rash", sub:"Do the glass test first", icon:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8.5" r="1.5"/><circle cx="15" cy="10" r="1.5"/><circle cx="10" cy="15" r="1.5"/><circle cx="16" cy="16" r="1.5"/><circle cx="12" cy="11.6" r="1.5"/></svg>',
+  flags:["Spots that stay dark under a firm glass press","Swelling of the lips, tongue or throat","Blistering or peeling skin"],
+  opts:[["Angry red nappy area, worst in the folds","cham"],["Itchy, oozing, honey-coloured crusts in the folds","graph"],["Raised pale wheals that burn and sting","apis"]],
+  watch:["A rash that does not fade under a glass","Swelling of the lips, tongue or throat","Blistering or peeling skin","Fever with a rash and a drowsy child"]},
+
+ {id:"wheeze", name:"Wheeze", sub:"A whistle or a rattle", icon:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 4v9"/><path d="M12 13c0-2-1.8-4-3.8-4S5 11 5 14s2 5 4 5 3-1 3-3"/><path d="M12 13c0-2 1.8-4 3.8-4S19 11 19 14s-2 5-4 5-3-1-3-3"/></svg>',
+  flags:["A harsh noise breathing IN at rest, or drooling","A silent chest, or blue/grey lips","Exhausted, drowsy, working hard to breathe"],
+  opts:[["Dry, whistling, hoarse; worse before midnight","spong"],["Loose rattling mucus, drowsy, must sit up","antTart"],["Worse at midnight, anxious, sits up, sips water","ars"]],
+  watch:["Noisy breathing in at rest, drooling, or sitting forward","A silent chest or blue lips","Drowsiness or exhaustion","Use the prescribed reliever inhaler FIRST"]},
+
+ {id:"injury", name:"Bump &amp; burn", sub:"After a fall or a spill", icon:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4.5" y="9" width="15" height="6" rx="3" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="1.2"/></svg>',
+  flags:["Head injury with vomiting, drowsiness or confusion","A burn bigger than the palm, or on the face, hands or joints","A limb that is deformed or cannot take weight"],
+  opts:[["Bruise and shock after a fall","arnica"],["Bruised, lame bone or shin after a blow","ruta"],["Burn or scald with blistering, burning pain","canth"]],
+  watch:["Head injury with vomiting or drowsiness","A burn bigger than the palm, or on the face, hands or joints","Any deformed limb, or one that cannot take weight","Unexplained bruises in a baby who cannot move about"]}
+];
+
+const GENERAL = [
+ "Struggling to breathe: ribs sucking in, nostrils flaring, grunting, or blue/grey lips",
+ "A rash of dark spots that does NOT fade when pressed firmly under a clear glass",
+ "Very drowsy, floppy, or cannot be woken; a weak or high-pitched cry",
+ "A baby under 12 weeks with any temperature above 38\u00b0C",
+ "No wet nappy for 8 hours, sunken eyes, no tears, or a sunken soft spot",
+ "Stiff neck, arched back, or a fit (seizure)",
+ "Drooling, unable to swallow, or sitting forward to breathe",
+ "Sudden agonising belly pain with the legs drawn up, or green (bile) vomit"
+];
+
+const DOSE = "Dissolve two pellets in about four ounces (120 ml) of clean water and give one teaspoonful. Wait forty minutes before repeating, and only if the picture is unchanged. Never give anything by mouth to a child who is drowsy or struggling to breathe.";
+
+/* --------------------------------------------------------------- state */
+let S = {screen:"home", cond:null, pick:null};
+const $ = (h)=>document.querySelector(h);
+const view = ()=>$("#view");
+function esc(s){return s;}
+function render(){
+  view().innerHTML="";
+  ({home:vHome, condition:vCond, remedies:vRx, flags:vFlags, about:vAbout}[S.screen])();
+  window.scrollTo(0,0);
+}
+
+/* --------------------------------------------------------------- screens */
+function vHome(){
+  let tiles = CONDITIONS.map(c=>
+    `<div class="tile" data-c="${c.id}"><div class="ic">${c.icon}</div>
+       <div class="nm">${c.name}</div><div class="sb">${c.sub}</div></div>`).join("");
+  view().innerHTML = `
+    <h1>What is troubling the child?</h1>
+    <p class="lead">Pick the closest situation. Each one shows its emergency signs, then the remedies that fit.</p>
+    <div class="grid">${tiles}</div>
+    <div class="card gold">
+      <p style="margin:0"><b>Before any remedy:</b> if the child is struggling to breathe, drowsy, floppy, or has a rash that does not fade under a glass — call your local emergency number now. Homeopathy never replaces emergency care.</p>
+    </div>
+    <button class="btn ghost" id="about">About this app &amp; its limits</button>`;
+  view().querySelectorAll(".tile").forEach(t=>t.onclick=()=>{
+    S.cond=t.dataset.c; S.pick=null; S.screen="condition"; render();});
+  $("#about").onclick=()=>{S.screen="about"; render();};
+}
+
+function vCond(){
+  const c = CONDITIONS.find(x=>x.id===S.cond);
+  view().innerHTML = `
+    <h1>${c.name}</h1>
+    <div class="strip">
+      <h4>Call for help now if:</h4>
+      <ul>${c.flags.map(f=>`<li>${f}</li>`).join("")}</ul>
+      <button class="btn danger" id="em">Yes \u2014 one of these applies</button>
+    </div>
+    <h2>Which picture fits best?</h2>
+    <p class="muted">Tap the single description closest to the child. If none fits, or you are unsure, do not prescribe \u2014 speak to a clinician.</p>
+    <div id="opts"></div>
+    <div id="rx"></div>
+    <div class="card">
+      <h3 style="margin-top:0">Stop and get help if:</h3>
+      <ul>${c.watch.map(w=>`<li>${w}</li>`).join("")}</ul>
+    </div>
+    <button class="btn ghost back" id="home">\u2190 All situations</button>`;
+  const opts = $("#opts");
+  c.opts.forEach(([desc,key])=>{
+    const b=document.createElement("button");
+    b.className="btn"+(S.pick===key?" on":"");
+    b.innerHTML=`<span class="nm">${R[key].short}</span><span class="sub">${desc}</span>`;
+    b.onclick=()=>{S.pick=key; render();};
+    opts.appendChild(b);
+  });
+  if(S.pick){
+    const r=R[S.pick];
+    $("#rx").innerHTML=`
+      <div class="card rx">
+        <span class="pill">Gentle orientation \u00b7 confirm with a clinician</span>
+        <h3>${r.n}</h3>
+        <p class="kv"><b>Key picture.</b> ${r.k}</p>
+        <p class="kv"><b>Modalities.</b> ${r.w}</p>
+        <h3>Dose (from the book)</h3>
+        <p class="muted" style="margin:0">${DOSE}</p>
+      </div>
+      <div class="card gold"><p style="margin:0"><b>Reassess after a short while.</b> If the child is clearly better, stop and let it work. If there is no change, or the child gets worse, or a red flag appears \u2014 stop the remedy and seek medical care.</p></div>`;
+  }
+  $("#em").onclick=()=>{S.screen="flags"; render();};
+  $("#home").onclick=()=>{S.screen="home"; render();};
+}
+
+function vRx(){
+  const rows = Object.keys(R).map(k=>`<div class="rxrow"><div><div class="n">${R[k].n}</div>
+      <div class="d">${R[k].short}</div></div></div>`).join("");
+  view().innerHTML=`<h1>Remedies in this book</h1>
+    <p class="lead">The twenty remedies used in <em>Gentle Pediatrics</em>, with the one-line picture that separates each.</p>
+    ${rows}
+    <div class="card gold"><p style="margin:0">This is a keynotes index, not a prescribing guide. Match the whole child, and confirm with a licensed clinician.</p></div>
+    <button class="btn ghost back" id="home">\u2190 Back</button>`;
+  $("#home").onclick=()=>{S.screen="home"; render();};
+}
+
+function vFlags(){
+  view().innerHTML=`
+    <h1>Red flags \u2014 go straight to emergency care</h1>
+    <p class="lead">Memorise these. If any is present, call your local emergency number (108 / 112 in India; 999 UK; 911 US). Do not give a remedy first.</p>
+    <div class="strip"><ul style="margin:0">${GENERAL.map(f=>`<li>${f}</li>`).join("")}</ul></div>
+    <div class="card sage"><p style="margin:0"><b>The glass test.</b> Press a clear glass firmly on the spots. If they fade, the rash usually blanches and is rarely dangerous. If they stay dark, treat it as an emergency and call for help at once.</p></div>
+    <button class="btn danger" id="call">\u260e\ufe0f  Call emergency services</button>
+    <button class="btn ghost back" id="home">\u2190 Back</button>`;
+  $("#call").onclick=()=>{location.href="tel:112";};
+  $("#home").onclick=()=>{S.screen="home"; render();};
+}
+
+function vAbout(){
+  view().innerHTML=`
+    <h1>About this app</h1>
+    <div class="card sage"><p style="margin:0">A companion to <b>Gentle Pediatrics: A Practical Homeopathic Companion</b> by Dr. Sohil Momin, B.H.M.S. It turns the book's red-flag boxes and remedy cards into a quick, offline tool for a parent at the cot side.</p></div>
+    <h2>How to use it</h2>
+    <ul>
+      <li>Pick the situation. Read the emergency signs at the top \u2014 if one applies, call for help.</li>
+      <li>Tap the picture closest to the child to see the remedy, its keynotes and the dose from the book.</li>
+      <li>Reassess after a short while. No change, or worse, or a new red flag \u2014 stop and seek care.</li>
+    </ul>
+    <h2>What it will not do</h2>
+    <ul>
+      <li>It does not diagnose, and it never replaces emergency care, oxygen, IV fluids, antibiotics or surgery.</li>
+      <li>It is not a vaccine and does not prevent infection.</li>
+      <li>It does not cover every illness \u2014 only the nine acute situations in the book.</li>
+    </ul>
+    <h2>Honest limits</h2>
+    <p>Homeopathy's evidence base is contested in modern clinical research. This is an educational aid, not a regulated medical device. Clinical vignettes in the book are composite teaching cases. Always consult a licensed clinician for individual care. Offline, no account, nothing stored or sent.</p>
+    <button class="btn ghost back" id="home">\u2190 Back</button>`;
+  $("#home").onclick=()=>{S.screen="home"; render();};
+}
+
+$("#navFlags").onclick=()=>{S.screen="flags"; render();};
+$("#navRx").onclick=()=>{S.screen="remedies"; render();};
+render();
+if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{});});}
+</script>
+</body>
+</html>
