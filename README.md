@@ -1,24 +1,18 @@
 <div align="center">
   <img src="banner.svg" alt="Gentle Pediatrics — Home Companion" width="100%">
-</div>
-
-<div align="center">
-
-**A small, offline phone app for a parent at the cot side — built from the book
-*Gentle Pediatrics: A Practical Homeopathic Companion* by Dr. Sohil Momin, B.H.M.S.**
-
-[![Live app](https://img.shields.io/badge/%E2%96%B6%20OPEN%20THE%20APP-live-2ea44f
-[![License](https://img.shields.io/badge/license-free%20to%20use-c46849
-[![PWA](https://img.shields.io/badge/PWA-offline%20ready-425848
-
-![Dependencies](https://img.shields.io/badge/dependencies-none-55755e
-![Build](https://img.shields.io/badge/build-single%20file-6e675d
-![Not a medical device](https://img.shields.io/badge/not%20a-medical%20device-b84a39
-![From the book](https://img.shields.io/badge/from-Gentle%20Pediatrics-425848
-![Stars](https://img.shields.io/github/stars/drsamonline/gentle-pediatrics-companion
-
-### ▶️ [**Open the live app →**](https://drsamonline.github.io/gentle-pediatrics-companion/)
-
+  <br><br>
+  <strong>A small, offline phone app for a parent at the cot side — built from the book <em>Gentle Pediatrics: A Practical Homeopathic Companion</em> by Dr. Sohil Momin, B.H.M.S.</strong>
+  <br><br>
+  <a href="https://drsamonline.github.io/gentle-pediatrics-companion/"><img src="docs/badges/live.svg" alt="Open the live app" height="28"></a>
+  <a href="#license"><img src="docs/badges/license.svg" alt="License: free to use" height="28"></a>
+  <a href="#install-it-like-an-app"><img src="docs/badges/pwa.svg" alt="PWA: offline ready" height="28"></a>
+  <br>
+  <img src="docs/badges/deps.svg" alt="Dependencies: none" height="28">
+  <img src="docs/badges/build.svg" alt="Build: single file" height="28">
+  <img src="docs/badges/medical.svg" alt="Not a medical device" height="28">
+  <img src="docs/badges/book.svg" alt="From Gentle Pediatrics" height="28">
+  <br><br>
+  <h3><a href="https://drsamonline.github.io/gentle-pediatrics-companion/">▶️ Open the live app →</a></h3>
 </div>
 
 ---
@@ -94,6 +88,7 @@ orientation only.
 | `icon.svg` | app icon |
 | `banner.svg` | README banner |
 | `docs/screens.svg` | README screenshots |
+| `docs/badges/` | README badges (local SVG) |
 | `docs/Companion_App_Brief.md` | design & safety brief |
 
 ## Credits
@@ -109,6 +104,4 @@ for personal, educational and non-commercial purposes, with attribution and this
 notice kept. Commercial use or resale needs written permission. See
 [LICENSE](LICENSE) for the full terms and the medical disclaimer.
 
-<div align="center">
-<sub>Not a medical device · educational aid only · in an emergency, call your local emergency number.</sub>
-</div>
+<div align="center"><sub>Not a medical device · educational aid only · in an emergency, call your local emergency number.</sub></div>
