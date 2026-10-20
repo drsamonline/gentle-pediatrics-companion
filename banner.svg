@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" width="1280" height="300" role="img" aria-label="Gentle Pediatrics Home Companion">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#425848"/><stop offset="1" stop-color="#2f4033"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="300" rx="18" fill="url(#g)"/>
+  <g transform="translate(96,58) scale(3.1)">
+    <path d="M30 54 C30 34 30 18 30 6" fill="none" stroke="#d4a337" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M30 40 Q14 32 12 16 Q28 22 30 40 Z" fill="#8fae97"/>
+    <path d="M30 28 Q46 20 48 6 Q32 12 30 28 Z" fill="#8fae97"/>
+  </g>
+  <text x="300" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="66" font-weight="700" fill="#faf8f5">Gentle Pediatrics</text>
+  <text x="302" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-style="italic" fill="#8fae97">Home Companion</text>
+  <text x="302" y="226" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#d9d2c7">An offline companion app for a sick child &#8212; from the book.</text>
+  <g transform="translate(1010,116)">
+    <rect width="196" height="52" rx="26" fill="#c46849"/>
+    <text x="98" y="34" text-anchor="middle" font-family="Georgia, serif" font-size="21" font-weight="700" fill="#ffffff">Free to use</text>
+  </g>
+</svg>
