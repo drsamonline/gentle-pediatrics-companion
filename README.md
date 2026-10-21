@@ -6,11 +6,11 @@
 situations, a red-flag check that is always visible, and gentle remedy orientation
 from the book *Gentle Pediatrics: A Practical Homeopathic Companion* by Dr. Sohil Momin, B.H.M.S.
 
-[![License: free to use](https://img.shields.io/badge/license-free%20to%20use-34d399?style=flat-square)](https://github.com/drsamonline/gentle-pediatrics-companion/blob/main/LICENSE)
-[![Dependencies: none](https://img.shields.io/badge/dependencies-none-34d399?style=flat-square)](https://github.com/drsamonline/gentle-pediatrics-companion)
-[![Build: single file](https://img.shields.io/badge/build-single%20file-0ea5e9?style=flat-square)](https://github.com/drsamonline/gentle-pediatrics-companion)
-[![PWA: offline ready](https://img.shields.io/badge/PWA-offline%20ready-0ea5e9?style=flat-square)](https://github.com/drsamonline/gentle-pediatrics-companion)
-[![Not a medical device](https://img.shields.io/badge/not%20a%20medical%20device-educational-6b8397?style=flat-square)](https://github.com/drsamonline/gentle-pediatrics-companion)
+[![License: free to use](https://img.shields.io/badge/license-free%20to%20use-34d399
+[![Dependencies: none](https://img.shields.io/badge/dependencies-none-34d399
+[![Build: single file](https://img.shields.io/badge/build-single%20file-0ea5e9
+[![PWA: offline ready](https://img.shields.io/badge/PWA-offline%20ready-0ea5e9
+[![Not a medical device](https://img.shields.io/badge/not%20a%20medical%20device-educational-6b8397
 
 ### [🌐 Landing page](https://drsamonline.github.io/gentle-pediatrics-companion/) &nbsp;·&nbsp; [▶️ Open the live app](https://drsamonline.github.io/gentle-pediatrics-companion/play/) &nbsp;·&nbsp; [💻 Source](https://github.com/drsamonline/gentle-pediatrics-companion)
 
@@ -25,7 +25,7 @@ from the book *Gentle Pediatrics: A Practical Homeopathic Companion* by Dr. Sohi
   <br><br>
   <strong>A small, offline phone app for a parent at the cot side — built from the book <em>Gentle Pediatrics: A Practical Homeopathic Companion</em> by Dr. Sohil Momin, B.H.M.S.</strong>
   <br><br>
-  <a href="https://drsamonline.github.io/gentle-pediatrics-companion/"><img src="docs/badges/live.svg" alt="Open the live app" height="28"></a>
+  <a href="https://drsamonline.github.io/gentle-pediatrics-companion/play/"><img src="docs/badges/live.svg" alt="Open the live app" height="28"></a>
   <a href="#license"><img src="docs/badges/license.svg" alt="License: free to use" height="28"></a>
   <a href="#install-it-like-an-app"><img src="docs/badges/pwa.svg" alt="PWA: offline ready" height="28"></a>
   <br>
@@ -34,7 +34,7 @@ from the book *Gentle Pediatrics: A Practical Homeopathic Companion* by Dr. Sohi
   <img src="docs/badges/medical.svg" alt="Not a medical device" height="28">
   <img src="docs/badges/book.svg" alt="From Gentle Pediatrics" height="28">
   <br><br>
-  <h3><a href="https://drsamonline.github.io/gentle-pediatrics-companion/">▶️ Open the live app →</a></h3>
+  <h3><a href="https://drsamonline.github.io/gentle-pediatrics-companion/play/">▶️ Open the live app →</a></h3>
 </div>
 
 ---
@@ -64,7 +64,7 @@ hidden, and never blocks the common case.
 ## Install it like an app
 
 It is a Progressive Web App. Open the
-**[live app](https://drsamonline.github.io/gentle-pediatrics-companion/)** on a
+**[live app](https://drsamonline.github.io/gentle-pediatrics-companion/play/)** on a
 phone, then:
 
 - **iPhone (Safari):** Share → *Add to Home Screen*
