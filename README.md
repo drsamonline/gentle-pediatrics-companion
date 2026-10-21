@@ -34,7 +34,6 @@ from the book *Gentle Pediatrics: A Practical Homeopathic Companion* by Dr. Sohi
   <img src="docs/badges/medical.svg" alt="Not a medical device" height="28">
   <img src="docs/badges/book.svg" alt="From Gentle Pediatrics" height="28">
   <br><br>
-  <h3><a href="https://drsamonline.github.io/gentle-pediatrics-companion/play/">▶️ Open the live app →</a></h3>
 </div>
 
 ---
