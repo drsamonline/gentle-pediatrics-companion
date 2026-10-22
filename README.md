@@ -12,7 +12,7 @@ from the book *Gentle Pediatrics: A Practical Homeopathic Companion* by Dr. Sohi
 [![PWA: offline ready](https://img.shields.io/badge/PWA-offline%20ready-0ea5e9)](https://drsamonline.github.io/gentle-pediatrics-companion/play/)
 [![Not a medical device](https://img.shields.io/badge/not%20a%20medical%20device-educational-6b8397)](https://github.com/drsamonline/gentle-pediatrics-companion)
 
-### [🌐 Landing page](https://drsamonline.github.io/gentle-pediatrics-companion/) &nbsp;·&nbsp; [▶️ Open the live app](https://drsamonline.github.io/gentle-pediatrics-companion/play/) &nbsp;·&nbsp; [💻 Source](https://github.com/drsamonline/gentle-pediatrics-companion)
+### [🌐 Landing page](https://drsamonline.github.io/gentle-pediatrics-companion/) &nbsp;·&nbsp; [▶️ Open the live app](https://drsamonline.github.io/gentle-pediatrics-companion/play/) &nbsp;·&nbsp; [💻 Source](https://github.com/drsamonline/gentle-pediatrics-companion) &nbsp;·&nbsp; [All projects](https://drsamonline.github.io/)
 
 **Download:** [Windows (.exe)](https://github.com/drsamonline/gentle-pediatrics-companion/releases/latest/download/gentle-pediatrics-companion-portable.exe) &nbsp;·&nbsp; [Android (.apk)](https://github.com/drsamonline/gentle-pediatrics-companion/releases/latest/download/gentle-pediatrics-companion.apk)
 
