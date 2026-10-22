@@ -14,6 +14,8 @@ from the book *Gentle Pediatrics: A Practical Homeopathic Companion* by Dr. Sohi
 
 ### [🌐 Landing page](https://drsamonline.github.io/gentle-pediatrics-companion/) &nbsp;·&nbsp; [▶️ Open the live app](https://drsamonline.github.io/gentle-pediatrics-companion/play/) &nbsp;·&nbsp; [💻 Source](https://github.com/drsamonline/gentle-pediatrics-companion)
 
+**Download:** [Windows (.exe)](https://github.com/drsamonline/gentle-pediatrics-companion/releases/latest/download/gentle-pediatrics-companion-portable.exe) &nbsp;·&nbsp; [Android (.apk)](https://github.com/drsamonline/gentle-pediatrics-companion/releases/latest/download/gentle-pediatrics-companion.apk)
+
 <sub>Not a medical device · educational aid only · in an emergency, call your local emergency number.</sub>
 
 </div>
