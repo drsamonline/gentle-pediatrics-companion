@@ -6,11 +6,11 @@
 situations, a red-flag check that is always visible, and gentle remedy orientation
 from the book *Gentle Pediatrics: A Practical Homeopathic Companion* by Dr. Sohil Momin, B.H.M.S.
 
-[![License: free to use](https://img.shields.io/badge/license-free%20to%20use-34d399
-[![Dependencies: none](https://img.shields.io/badge/dependencies-none-34d399
-[![Build: single file](https://img.shields.io/badge/build-single%20file-0ea5e9
-[![PWA: offline ready](https://img.shields.io/badge/PWA-offline%20ready-0ea5e9
-[![Not a medical device](https://img.shields.io/badge/not%20a%20medical%20device-educational-6b8397
+[![License: free to use](https://img.shields.io/badge/license-free%20to%20use-34d399)](
+[![Dependencies: none](https://img.shields.io/badge/dependencies-none-34d399)](
+[![Build: single file](https://img.shields.io/badge/build-single%20file-0ea5e9)](
+[![PWA: offline ready](https://img.shields.io/badge/PWA-offline%20ready-0ea5e9)](
+[![Not a medical device](https://img.shields.io/badge/not%20a%20medical%20device-educational-6b8397)](
 
 ### [🌐 Landing page](https://drsamonline.github.io/gentle-pediatrics-companion/) &nbsp;·&nbsp; [▶️ Open the live app](https://drsamonline.github.io/gentle-pediatrics-companion/play/) &nbsp;·&nbsp; [💻 Source](https://github.com/drsamonline/gentle-pediatrics-companion)
 
