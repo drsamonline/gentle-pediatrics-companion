@@ -2,6 +2,12 @@
 
 # 🩵 Gentle Pediatrics — Home Companion
 
+<!-- shot:start -->
+
+![Screenshot](docs/shot.png)
+
+<!-- shot:end -->
+
 **A small, offline phone app for a parent at the cot side** — nine common childhood
 situations, a red-flag check that is always visible, and gentle remedy orientation
 from the book *Gentle Pediatrics: A Practical Homeopathic Companion* by Dr. Sohil Momin, B.H.M.S.
