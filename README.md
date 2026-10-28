@@ -2,6 +2,8 @@
 
 # 🩵 Gentle Pediatrics — Home Companion
 
+[![License: Free to use, non-commercial](https://img.shields.io/badge/license-Free%20to%20use,%20non--commercial-yellowgreen)](LICENSE)
+
 <!-- shot:start -->
 
 ![Screenshot](docs/shot.png)
