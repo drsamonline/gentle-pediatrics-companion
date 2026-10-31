@@ -465,5 +465,21 @@ window.addEventListener("error", function () { window.__bootError = true; });
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
   });
 })();
-</script></body>
+</script><style id="app-theme">
+  /* gentle-pediatrics-companion - its own palette, type and shape.
+     Keyed on data-theme so the in-app theme toggle still works; !important is
+     required because web-kit sets these as inline styles on <html>. */
+  html[data-theme="dark"]{--bg:#050f17 !important;--card:#051824 !important;--ink:#edf6fb !important;--mut:#4d8cb4 !important;--line:#042437 !important;--acc:#49a6d7 !important;}
+  html[data-theme="light"]{--bg:#f4f9fc !important;--card:#ffffff !important;--ink:#0a1d2b !important;--mut:#2179a9 !important;--line:#dceef7 !important;--acc:#026ca3 !important;}
+  html,body{font-family:"SF Pro Rounded", ui-rounded, "Nunito", system-ui, sans-serif !important;letter-spacing:0 !important;
+    background-image:radial-gradient(820px 360px at 50% -170px,
+      color-mix(in srgb, var(--acc) 16%, transparent), transparent 72%) !important;
+    background-repeat:no-repeat !important;background-attachment:fixed !important}
+  button,input,textarea,select{font-family:"SF Pro Rounded", ui-rounded, "Nunito", system-ui, sans-serif !important}
+  button,.btn{border-radius:18px !important}
+  input,textarea,select{border-radius:16px !important}
+  .card,[class*="card"]{border-radius:20px !important}
+  button:not(.ghost):not(.tab){background:var(--acc) !important}
+</style>
+</body>
 </html>
