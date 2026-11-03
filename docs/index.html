@@ -394,6 +394,18 @@ a[href*="/releases/latest/download/"] svg{width:19px;height:19px;flex:none;displ
     *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
     .js .reveal{opacity:1;transform:none}
   }
+
+  /* ---------- light theme ----------
+     Added so the page reads on paper. It overrides the page's own variables and
+     nothing else — no markup, no layout, no type. */
+  :root, html {
+    color-scheme: light;
+    --bg: #f7f6f2;
+    --card: #ffffff;
+    --ink: #14161a;
+    --muted: #5c6470;
+    --line: #e2ddd2;
+  }
 </style>
 </head>
 <body>
