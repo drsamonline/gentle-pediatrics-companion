@@ -2,7 +2,7 @@
 
 # 🩵 Gentle Pediatrics — Home Companion
 
-[![License: Free to use, non-commercial](https://img.shields.io/badge/license-Free%20to%20use,%20non--commercial-yellowgreen)](LICENSE)
+[![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-blue)](LICENSE)
 
 <!-- shot:start -->
 
@@ -136,9 +136,9 @@ afternoon, a contribution keeps the next one coming — any amount, or none.
 
 ## License
 
-**Free to use.** Copyright © 2026 Dr. Sohil Momin. Free to use, copy and share
-for personal, educational and non-commercial purposes, with attribution and this
-notice kept. Commercial use or resale needs written permission. See
-[LICENSE](LICENSE) for the full terms and the medical disclaimer.
+**PolyForm Noncommercial 1.0.0.** Copyright © 2026 Dr. Sohil Momin. Free to use, copy
+and share for any **noncommercial** purpose — personal, educational, in a clinic that does
+not charge for it — with this notice kept. Commercial use or resale needs a separate
+licence. See [LICENSE](LICENSE) for the full terms and the medical disclaimer.
 
 <div align="center"><sub>Not a medical device · educational aid only · in an emergency, call your local emergency number.</sub></div>

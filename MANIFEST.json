@@ -3,10 +3,10 @@
   "locked": false,
   "files": {
     "README.md": {
-      "sha": "5b152f62c8ac34692270323a562094d59192c982",
-      "producer": "audit-2026-11-10",
+      "sha": "9c5c16142c458e071152d45f7b48c5602c34f3c7",
+      "producer": "audit-2026-11-11",
       "class": "agent",
-      "at": "2026-11-10T13:42:09Z"
+      "at": "2026-11-10T18:49:12Z"
     },
     "docs/index.html": {
       "sha": "af22212ecb8937379933aab66bbf2702cc93ac69",
@@ -25,7 +25,13 @@
       "producer": "audit-2026-11-10",
       "class": "canonical",
       "at": "2026-11-10T15:12:10Z"
+    },
+    "LICENSE": {
+      "sha": "295d4f7d26d1170a1e38f43c2cb47df84c046c86",
+      "producer": "audit-2026-11-11",
+      "class": "agent",
+      "at": "2026-11-10T18:49:12Z"
     }
   },
-  "updated": "2026-11-10T15:12:10Z"
+  "updated": "2026-11-10T18:49:12Z"
 }
