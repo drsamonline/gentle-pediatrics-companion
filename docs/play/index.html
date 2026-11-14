@@ -477,6 +477,12 @@ window.addEventListener("error", function () { window.__bootError = true; });
   input,textarea,select{border-radius:16px !important}
   .card,[class*="card"]{border-radius:20px !important}
   button:not(.ghost):not(.tab){background:var(--acc) !important}
+
+/* ---- a11y: button contrast (measured, WCAG AA) --------------------------- */
+
+/* --acc #49a6d7 carries a white label at 2.72:1. Darkened two steps, same hue:
+   white reaches 5.4:1, and the accent used as text on white improves with it. */
+[data-theme=dark]{--acc:#1d6fa5!important}
 </style>
 </body>
 </html>
