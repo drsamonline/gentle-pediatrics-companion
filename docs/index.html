@@ -449,6 +449,13 @@ a[href*="/releases/latest/download/"] svg{width:19px;height:19px;flex:none;displ
   .theme-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
   .theme-btn:hover{opacity:1}
   .theme-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+
+/* ---- a11y: button contrast (measured, WCAG AA) ----------------------------
+   A button paired a surface token that flips with the theme with a text colour
+   that does not, so one mode rendered the label invisible. Each rule below
+   pins the pair. Ratios are from the rendered page, not from the source. */
+
+.btn.btn-primary{color:#0b2b22!important}                        /* 1.92 -> 7.9 on #34d399 */
 </style>
 <script>
 /* THEME BEFORE FIRST PAINT: a page that paints one theme and flips to the other is a
